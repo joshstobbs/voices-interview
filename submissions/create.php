@@ -75,8 +75,8 @@ try {
 
     $response = json_encode([ "message" => "Success" ]);
     echo($response);
-} catch (\Throwable $th) {
-    $response = json_encode([ "message" => "Failure" ]);
+} catch (Exception $e) {
+    $response = json_encode([ "message" => $e->getMessage() ]);
     echo($response);
 
     http_response_code(500);
