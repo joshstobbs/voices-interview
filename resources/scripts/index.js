@@ -146,7 +146,7 @@ function handleSubmit() {
 
         try {
             fetch(endpoint, { method: "POST", body: data })
-                .then((response) => response.json())
+                .then((response) => {})
                 .then((data) => {
                     formAlertMessage.textContent = "Awesome! Your job was submitted sucessfully!"
 
