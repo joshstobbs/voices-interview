@@ -73,8 +73,8 @@ try {
 
     http_response_code(201);
 
-    $response = json_encode([ "message" => "Success" ]);
-    echo($response);
+    // $response = json_encode([ "message" => "Success" ]);
+    // echo($response);
 } catch (Exception $e) {
     $response = json_encode([ "message" => $e->getMessage() ]);
     echo($response);
