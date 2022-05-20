@@ -69,9 +69,9 @@ try {
 
     saveData($input);
 
-    sendMail($input);
+    // sendMail($input);
 
-    http_response_code(201);
+    // http_response_code(201);
 
     // $response = json_encode([ "message" => "Success" ]);
     // echo($response);
