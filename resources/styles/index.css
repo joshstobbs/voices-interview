@@ -1,16 +1,12 @@
 @import "./reset.css";
 
 :root {
-    --color-cyan-0: #e3fafc;
-    --color-cyan-1: #c5f6fa;
-    --color-cyan-2: #99e9f2;
-    --color-cyan-3: #66d9e8;
-    --color-cyan-4: #3bc9db;
-    --color-cyan-5: #22b8cf;
-    --color-cyan-6: #15aabf;
-    --color-cyan-7: #1098ad;
-    --color-cyan-8: #0c8599;
-    --color-cyan-9: #0b7285;
+    --color-blue-0: #ddf0ff;
+    --color-blue-1: #97d2ff;
+    --color-blue-2: #4db1ff;
+    --color-blue-3: #208fe6;
+    --color-blue-4: #1171bb;
+    --color-blue-5: #004a81;
     --color-red-0: #fff8f8;
     --color-red-1: #ffdddf;
     --color-red-2: #ff426c;
@@ -34,8 +30,8 @@
     --color-gray-7: #495057;
     --color-gray-8: #343a40;
     --color-gray-9: #212529;
-    --color-primary: var(--color-cyan-8);
-    --color-primary-hover: var(--color-cyan-7);
+    --color-primary: var(--color-blue-4);
+    --color-primary-hover: var(--color-blue-3);
     --weight-normal: 400;
     --weight-bold: 600;
     --space-1: 0.25rem;
@@ -111,6 +107,15 @@ label {
     --border-color: var(--color-red-3);
 }
 
+.form-error-message {
+    --text-color: var(--color-red-4);
+
+    display: block;
+    margin-top: var(--space-1);
+    color: var(--text-color);
+    font-weight: var(--weight-bold);
+}
+
 .button {
     --background-color: var(--color-primary);
     --border-color: var(--background);
@@ -139,7 +144,7 @@ label {
 }
 
 .button:focus {
-    --outline-color: var(--color-cyan-3);
+    --outline-color: var(--color-blue-2);
     box-shadow: 0 0 0 2px var(--outline-color);
 }
 
@@ -234,11 +239,13 @@ input[type="file"] {
 
 .form-footer {
     --background-color: var(--color-gray-1);
+    --border-color: var(--color-gray-3);
 
     display: flex;
     justify-content: flex-end;
     padding: var(--space-4);
     background: var(--background-color);
+    border-top: var(--border-color) solid 1px;
     border-bottom-left-radius: var(--radii-lg);
     border-bottom-right-radius: var(--radii-lg);
 }

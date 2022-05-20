@@ -94,20 +94,24 @@ function handleReset() {
     })
 }
 
-function validateInput() {
-    let form = document.querySelector("form")
-    let titleInput = form.querySelector("#job-title")
-    let titleInputError = form.querySelector("#job-title-error")
-    let countryInput = form.querySelector("#job-country")
-    let countryInputError = form.querySelector("#job-country-error")
-    let regionInput = form.querySelector("#job-region")
-    let regionInputError = form.querySelector("#job-region-error")
+function validateInput(selector, rules = { min: 3, max: 50 }) {
+    let input = document.querySelector(selector)
+    let value = input.value
+    let messageContainer = input.nextElementSibling
 
-    titleInput.value = ""
+    input.classList.remove("form-error")
+    messageContainer.style.display = "none"
 
-    if (titleInput.value === "") {
-        titleInput.classList.add("form-error")
+    if (value.length < rules.min || value.length > rules.max) {
+        messageContainer.textContent = "Job Title length is incorrect."
+
+        input.classList.add("form-error")
+        messageContainer.style.display = "block"
+
+        return false
     }
+
+    return true
 }
 
 function handleSubmit() {
@@ -124,6 +128,11 @@ function handleSubmit() {
 
     form.addEventListener("submit", (event) => {
         event.preventDefault()
+
+        if (!validateInput("#job-title")) {
+            return
+        }
+
         let endpoint = event.target.action
 
         let data = new FormData()
@@ -155,6 +164,10 @@ function handleSubmit() {
             formAlert.style.display = "none"
         })
     })
+
+    // form.addEventListener("submit", (event) => {
+    //     event.preventDefault()
+    // })
 }
 
 document.addEventListener(

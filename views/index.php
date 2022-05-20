@@ -21,6 +21,8 @@
             <div class="col-2">
                 <label for="job-title" class="required-label">Job Title</label>
                 <input id="job-title" name="job-title" type="text" required class="form-control">
+
+                <span class="form-error-message" style="display: none;">An error message.</span>
             </div>
 
             <div class="col-1">
