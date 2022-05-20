@@ -155,7 +155,7 @@ function handleSubmit() {
         } catch (error) {
             formAlertMessage.textContent = "Oh darn!  Something went wrong on our end, try again?"
 
-            console.error(error)
+            console.error("Something went wrong...", error)
         }
 
         formAlert.style.display = "flex"
